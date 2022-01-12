@@ -20,6 +20,10 @@
   "dependencies": {
     "dotenv": "^11.0.0",
     "jest": "^27.4.7",
+    "pg": "^8.7.1",
+    "sequelize": "^6.13.0",
+    "sequelize-cli": "^6.3.0",
+    "sqlite3": "^5.0.2",
     "supertest": "^6.2.1"
   }
 }
