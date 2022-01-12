@@ -1,0 +1,25 @@
+{
+  "name": "basic-api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiguel23/basic-api-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiguel23/basic-api-server/issues"
+  },
+  "homepage": "https://github.com/jamiguel23/basic-api-server#readme",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "jest": "^27.4.7",
+    "supertest": "^6.2.1"
+  }
+}
