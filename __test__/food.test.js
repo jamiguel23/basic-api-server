@@ -14,8 +14,8 @@ afterAll(async ()=> {
 });
 
 const foodData = {
-  food: 'Adobo',
-  protein: 'Chicken',
+  food: 'Hot Dog',
+  protein: 'Beef?',
 };
 
 const foodData2 = {
@@ -36,7 +36,7 @@ xdescribe('testing the food route', () => {
 
 });
 
-describe('testing creating food', () => {
+xdescribe('testing creating food', () => {
 
   it('should respond with 200 with creating using POST', async () => {
     const response = await request.post('/food').send(foodData);
@@ -45,3 +45,16 @@ describe('testing creating food', () => {
   });
 
 });
+
+describe('testing getting one food', () => {
+
+  it('should read form food data', async () => {
+
+    const response = await request.get('/food/1');
+
+    expect(response.status).toEqual(200);
+    // expect(response.body.id).toBeDefined();
+  });
+
+});
+
