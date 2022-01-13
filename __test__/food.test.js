@@ -58,7 +58,7 @@ xdescribe('testing getting one food', () => {
 
 });
 
-describe('testing PUT', () => {
+xdescribe('testing PUT', () => {
 
   it('should respond with a 200 with updating a record using PUT', async () => {
     const response = await request.put('/food/2').send(foodData);
@@ -68,14 +68,14 @@ describe('testing PUT', () => {
 
 });
 
-xdescribe('testing DELETE', () => {
+describe('testing DELETE', () => {
 
-  it('should respond with a 200 with removing a record using DELETE', async () => {
+  it('should respond with a 200 if able to destroy using DELETE', async () => {
     const response = await request.delete('/food/1');
     expect(response.status).toBe(200);
 
-    const result = await request.get('/food/1');
-    expect(result.body).toEqual(null);
+    const getRes = await request.get('/food/1');
+    expect(getRes.body).toEqual(null);
   });
 
 });
