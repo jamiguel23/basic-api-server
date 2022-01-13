@@ -2,7 +2,7 @@
 
 const supertest = require('supertest');
 const { app } = require('../lib/server.js');
-const { db } = require('../lib/model')
+const { db } = require('../lib/model');
 const request = supertest(app);
 
 beforeAll(async ()=> {
@@ -13,7 +13,17 @@ afterAll(async ()=> {
   await db.drop();
 });
 
-describe('testing the food route', () => {
+const foodData = {
+  food: 'Adobo',
+  protein: 'Chicken',
+};
+
+const foodData2 = {
+  food: 'BLT',
+  protein: 'Pork',
+};
+
+xdescribe('testing the food route', () => {
 
   it('should read form food data', async () => {
 
@@ -26,3 +36,12 @@ describe('testing the food route', () => {
 
 });
 
+describe('testing creating food', () => {
+
+  it('should respond with 200 with creating using POST', async () => {
+    const response = await request.post('/food').send(foodData);
+    expect(response.status).toBe(200);
+    expect(typeof response.body).toEqual('object');
+  });
+
+});
